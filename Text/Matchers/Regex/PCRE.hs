@@ -14,8 +14,8 @@ pcre :: CaseSensitive
 pcre c bs = let
   u8 = [PCRE.utf8]
   opts = case c of
-    Sensitive -> PCRE.caseless:u8
-    Insensitive -> u8 in
+    Sensitive -> u8
+    Insensitive -> PCRE.caseless:u8 in
   case PCRE.compileM bs opts of
     (Left err) -> Exception err
     (Right rx) -> Success $ \s ->
