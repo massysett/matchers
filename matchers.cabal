@@ -9,7 +9,7 @@ maintainer: omari@smileystation.com
 stability: Experimental
 homepage: http://www.github.com/massysett/matchers
 bug-reports: omari@smileystation.com
-Category: Console
+Category: Text
 License-File: LICENSE
 synopsis: Text matchers
 
