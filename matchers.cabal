@@ -1,5 +1,5 @@
 Name: matchers
-Version: 0.1.0.0
+Version: 0.2.0.0
 Cabal-version: >=1.8
 Build-Type: Simple
 License: MIT
@@ -13,7 +13,7 @@ Category: Console
 License-File: LICENSE
 synopsis: Text matchers
 
-description: Text matchers
+description: Helpers for performing text matches.
 
 source-repository head
     type: git
