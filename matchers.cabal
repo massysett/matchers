@@ -21,13 +21,16 @@ source-repository head
 
 Library
     Build-depends:
-        base ==4.*,
-        bytestring ==0.9.*,
-        explicit-exception ==0.1.*,
-        regex-base ==0.93.*,
-        regex-tdfa ==1.1.*,
-        text ==0.11.*,
-        pcre-light ==0.4.*
+          base ==4.*
+        , bytestring ==0.9.*
+        , explicit-exception ==0.1.*
+        , parsec >= 3.1.2 && < 3.2
+        , pcre-light ==0.4.*
+        , regex-base ==0.93.*
+        , regex-tdfa ==1.1.*
+        , text ==0.11.*
+        , time ==1.4.*
+
 
     Exposed-modules:
         Text.Matchers
