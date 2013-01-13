@@ -47,7 +47,7 @@ descSensitive c = case c of
   Insensitive -> " (case insensitive)"
 
 pcre :: CaseSensitive -> Text -> Exceptional Text Matcher
-pcre c t = case PCRE.pcre c (encodeUtf8 t) of
+pcre c t = case pcrePrim c (encodeUtf8 t) of
   Exception e -> Exception (pack e)
   Success f ->
     let sDesc = pack "Perl-compatible regular expression"
@@ -132,8 +132,8 @@ pcrePrim c bs = let
     Sensitive -> u8
     Insensitive -> PCRE.caseless:u8 in
   case PCRE.compileM bs opts of
-    (Bad err) -> Exception err
-    (Good rx) -> Success $ \s ->
+    (Left err) -> Exception err
+    (Right rx) -> Success $ \s ->
       case PCRE.match rx s [] of
         (Just _) -> True
         Nothing -> False
