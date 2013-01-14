@@ -5,6 +5,9 @@ module Text.Matchers
   , pcre
   , within
   , exact
+  , CompUTC(..)
+  , descUTC
+  , compUTCtoCmp
   , date
   ) where
 
@@ -280,6 +283,7 @@ data CompUTC
   | UExactly
   | UBefore
   | UOnOrBefore
+  deriving (Eq, Show, Ord)
 
 descUTC :: CompUTC -> Time.UTCTime -> String
 descUTC c u = "date is " ++ co ++ " " ++ dt
