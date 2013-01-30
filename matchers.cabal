@@ -22,7 +22,7 @@ source-repository head
 Library
     Build-depends:
           base ==4.*
-        , bytestring ==0.9.*
+        , bytestring ==0.10.*
         , explicit-exception ==0.1.*
         , parsec >= 3.1.2 && < 3.2
         , pcre-light ==0.4.*
