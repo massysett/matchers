@@ -43,9 +43,22 @@ data Matcher = Matcher
     -- ^ Function to carry out the match
     }
 
-tdfa :: CaseSensitive -> Text -> Exceptional Text Matcher
+-- | Uses the regular expression matcher from the regex-tdfa
+-- package. This is a POSIX extended regular expression. It should
+-- work correctly with Unicode.
+tdfa
+  :: CaseSensitive
+
+  -> Text
+  -- ^ The pattern
+
+  -> Exceptional Text Matcher
+  -- ^ The Matcher if the pattern is good; if the pattern is bad,
+  -- returns an error message. The error message has a trailing
+  -- newline.
+
 tdfa c t = case tdfaPrim c (unpack t) of
-  Exception e -> Exception (pack e)
+  Exception e -> Exception $ pack e
   Success f ->
     let sDesc = pack "POSIX-like regular expression (TDFA)"
         mrDesc = pack $ "matches the POSIX regular expression \""
@@ -58,9 +71,21 @@ descSensitive c = case c of
   Sensitive -> " (case sensitive)"
   Insensitive -> " (case insensitive)"
 
-pcre :: CaseSensitive -> Text -> Exceptional Text Matcher
+-- | Uses the PCRE regular expression engine. Currently the pcre-light
+-- package is used, as it has a simpler interface than the
+-- regex-pcre-builtin. It should work correctly with Unicode.
+pcre
+  :: CaseSensitive
+
+  -> Text
+  -- ^ Pattern
+
+  -> Exceptional Text Matcher
+  -- ^ The Matcher if the pattern is good; if the pattern is bad,
+  -- returns an error message.
+
 pcre c t = case pcrePrim c (encodeUtf8 t) of
-  Exception e -> Exception (pack e)
+  Exception e -> Exception $ pack e
   Success f ->
     let sDesc = pack "Perl-compatible regular expression"
         mrDesc = pack $ "matches the PCRE pattern \""
@@ -68,7 +93,15 @@ pcre c t = case pcrePrim c (encodeUtf8 t) of
         mr = f . encodeUtf8
     in return $ Matcher sDesc mrDesc mr
 
-within :: CaseSensitive -> Text -> Matcher
+-- | Matcher that succeeds if the pattern text is found anywhere
+-- within the subject.
+within
+  :: CaseSensitive
+
+  -> Text
+  -- ^ The pattern
+
+  -> Matcher
 within cs t = Matcher sDesc mrDesc mr
   where
     sDesc = pack "within"
@@ -76,6 +109,8 @@ within cs t = Matcher sDesc mrDesc mr
              ++ "\"" ++ descSensitive cs
     mr = txtMatch isInfixOf cs t
 
+-- | Matcher that succeeds if the pattern text exactly matches the
+-- subject (with case sensitivity as appropriate.)
 exact :: CaseSensitive -> Text -> Matcher
 exact cs t = Matcher sDesc mrDesc mr
   where
@@ -95,7 +130,15 @@ txtMatch f c p t = pat `f` txt where
     Sensitive -> id
     Insensitive -> toCaseFold
 
-date :: Maybe (CompUTC, Time.UTCTime) -> Matcher
+-- | Matcher that succeeds if the subject represents a valid date with
+-- an optional time.
+date
+  :: Maybe (CompUTC, Time.UTCTime)
+  -- ^ If Nothing, any valid date and time will succeed as a match;
+  -- the matcher will return False if the subject is not a valid
+  -- date. If Just, the subject must be a valid date and must fit
+  -- within the range indicated.
+  -> Matcher
 date mayPair = Matcher (pack "date") md mr
   where
     md = case mayPair of
