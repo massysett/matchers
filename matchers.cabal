@@ -1,5 +1,5 @@
 Name: matchers
-Version: 0.8.0.0
+Version: 0.9.0.0
 Cabal-version: >=1.8
 Build-Type: Simple
 License: BSD3
@@ -21,7 +21,7 @@ source-repository head
 
 Library
     Build-depends:
-          base ==4.*
+          base ==4.6.*
         , bytestring ==0.10.*
         , parsec >= 3.1.2 && < 3.2
         , pcre-light ==0.4.*
