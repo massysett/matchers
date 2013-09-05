@@ -12,16 +12,14 @@ module Text.Matchers
 
 import Control.Applicative ((<$>), (<*>), (<*), (<$), optional, (<|>))
 import Control.Monad (replicateM, mzero)
-import qualified Data.ByteString as BS
 import Data.Fixed (Pico)
-import Data.Maybe (fromMaybe, isJust)
+import Data.Maybe (fromMaybe)
 import Data.Text (Text, pack, unpack, toCaseFold, isInfixOf)
-import Data.Text.Encoding (encodeUtf8)
-import qualified Text.Regex.PCRE.Light as PCRE
 import Text.Parsec (many, satisfy)
 import qualified Text.Parsec as P
 import Text.Parsec.Text (Parser)
 import qualified Data.Time as Time
+import Text.Matchers.PcrePretty as PCRE
 
 data CaseSensitive = Sensitive | Insensitive deriving (Eq, Ord, Show)
 
@@ -56,13 +54,13 @@ pcre
   -- ^ The Matcher if the pattern is good; if the pattern is bad,
   -- returns an error message.
 
-pcre c t = case pcrePrim c (encodeUtf8 t) of
-  Left e -> Left $ pack e
-  Right f ->
+pcre c t = case PCRE.compile (c == Insensitive) t of
+  Left e -> Left . pack $ e
+  Right r ->
     let sDesc = pack "Perl-compatible regular expression"
         mrDesc = pack $ "matches the PCRE pattern \""
           ++ unpack t ++ "\"" ++ descSensitive c
-        mr = f . encodeUtf8
+        mr = maybe False id . PCRE.exec r
     in return $ Matcher sDesc mrDesc mr
 
 -- | Matcher that succeeds if the pattern text is found anywhere
@@ -126,21 +124,6 @@ date mayPair = Matcher (pack "date") md mr
         Just (c, t) ->
           let cmp = compUTCtoCmp c
           in return $ subjDT `cmp` t
-
-------------------------------------------------------------
--- PCRE primitives
-------------------------------------------------------------
-
-pcrePrim :: CaseSensitive
-        -> BS.ByteString
-        -> Either String (BS.ByteString -> Bool)
-pcrePrim c bs =
-  let u8 = [PCRE.utf8]
-      opts = case c of
-        Sensitive -> u8
-        Insensitive -> PCRE.caseless:u8
-      doMatch rx s = isJust $ PCRE.match rx s []
-  in fmap doMatch $ PCRE.compileM bs opts
 
 ------------------------------------------------------------
 -- Date parsers
