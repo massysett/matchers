@@ -19,7 +19,7 @@ import Text.Parsec (many, satisfy)
 import qualified Text.Parsec as P
 import Text.Parsec.Text (Parser)
 import qualified Data.Time as Time
-import Text.Matchers.PcrePretty as PCRE
+import Text.Matchers.Pcre as PCRE
 
 data CaseSensitive = Sensitive | Insensitive deriving (Eq, Ord, Show)
 

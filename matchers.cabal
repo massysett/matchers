@@ -30,8 +30,8 @@ Library
 
     Exposed-modules:
         Text.Matchers
-      , Text.Matchers.PcreBase
-      , Text.Matchers.PcrePretty
+      , Text.Matchers.Pcre
+      , Text.Matchers.Pcre.Base
 
    extra-libraries: pcre
 
