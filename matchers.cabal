@@ -13,6 +13,9 @@ Category: Console
 License-File: LICENSE
 tested-with: GHC==7.4.1, GHC==7.6.3
 synopsis: Text matchers
+extra-source-files:
+  current-versions.txt minimum-versions.txt sunlight-test.hs
+  README
 
 description: Helpers for performing text matches.
 
