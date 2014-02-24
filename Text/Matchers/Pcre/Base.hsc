@@ -1,4 +1,4 @@
-{-# LANGUAGE ForeignFunctionInterface, EmptyDataDecls, Safe #-}
+{-# LANGUAGE ForeignFunctionInterface, EmptyDataDecls #-}
 
 module Text.Matchers.Pcre.Base
   ( caseless
