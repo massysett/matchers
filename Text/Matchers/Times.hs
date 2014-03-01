@@ -1,4 +1,4 @@
-module Text.Matchers.Dates where
+module Text.Matchers.Times where
 
 import Data.Fixed
 import Data.Maybe

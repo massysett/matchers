@@ -35,9 +35,9 @@ Library
 
     Exposed-modules:
         Text.Matchers
-      , Text.Matchers.Dates
       , Text.Matchers.Pcre
       , Text.Matchers.Pcre.Base
+      , Text.Matchers.Times
 
    extra-libraries: pcre
 
