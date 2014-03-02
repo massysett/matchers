@@ -1,7 +1,7 @@
 This package was tested to work with these dependency
 versions and compiler version.
 These are the default versions fetched by cabal install.
-Tested as of: 2014-03-01 20:03:17.979027 UTC
+Tested as of: 2014-03-02 02:11:53.267528 UTC
 Path to compiler: ghc-7.6.3
 Compiler description: 7.6.3
 
@@ -32,12 +32,12 @@ Compiler description: 7.6.3
     time-1.4.0.1
     unix-2.6.0.1
 
-/home/massysett/matchers/sunlight-23118/db:
+/home/massysett/matchers/sunlight-26440/db:
     contravariant-0.4.4
-    matchers-0.16.0.0
+    matchers-0.18.0.0
     mtl-2.1.2
     parsec-3.1.5
-    prednote-0.20.0.0
+    prednote-0.22.0.0
     rainbow-0.6.0.4
     split-0.2.2
     tagged-0.7

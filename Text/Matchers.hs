@@ -12,7 +12,7 @@ import qualified Text.Parsec as P
 import qualified Data.Time as Time
 import Text.Matchers.Times (dateTime)
 import Text.Matchers.Pcre as PCRE
-import qualified Data.Prednote.Pdct as R
+import qualified Data.Prednote.Predbox as R
 
 data CaseSensitive = Sensitive | Insensitive deriving (Eq, Ord, Show)
 
@@ -28,8 +28,8 @@ pcre
   -> Text
   -- ^ Pattern
 
-  -> Either Text (R.Pdct Text)
-  -- ^ The Pdct if the pattern is good; if the pattern is bad,
+  -> Either Text (R.Predbox Text)
+  -- ^ The Predbox if the pattern is good; if the pattern is bad,
   -- returns an error message.
 
 pcre c t = case PCRE.compile (c == Insensitive) t of
@@ -38,7 +38,7 @@ pcre c t = case PCRE.compile (c == Insensitive) t of
     let mrDesc = pack $ "matches the PCRE pattern \""
           ++ unpack t ++ "\"" ++ descSensitive c
         mr = maybe False id . PCRE.exec r
-    in return $ R.operand mrDesc mr
+    in return $ R.predicate mrDesc mr
 
 -- | Matcher that succeeds if the pattern text is found anywhere
 -- within the subject.
@@ -48,8 +48,8 @@ within
   -> Text
   -- ^ The pattern
 
-  -> R.Pdct Text
-within cs t = R.operand mrDesc mr
+  -> R.Predbox Text
+within cs t = R.predicate mrDesc mr
   where
     mrDesc = pack $ "contains the text \"" ++ unpack t
              ++ "\"" ++ descSensitive cs
@@ -57,8 +57,8 @@ within cs t = R.operand mrDesc mr
 
 -- | Matcher that succeeds if the pattern text exactly matches the
 -- subject (with case sensitivity as appropriate.)
-exact :: CaseSensitive -> Text -> R.Pdct Text
-exact cs t = R.operand mrDesc mr
+exact :: CaseSensitive -> Text -> R.Predbox Text
+exact cs t = R.predicate mrDesc mr
   where
     mrDesc = pack $ "matches the text \"" ++ unpack t
              ++ "\"" ++ descSensitive cs
@@ -76,8 +76,8 @@ txtMatch f c p t = pat `f` txt where
     Insensitive -> toCaseFold
 
 -- | Matches any valid time.
-anyTime :: R.Pdct Text
-anyTime = R.operand mrDesc mr
+anyTime :: R.Predbox Text
+anyTime = R.predicate mrDesc mr
   where
     mrDesc = pack "any valid time"
     mr x = case P.parse dateTime "" x of
@@ -85,23 +85,18 @@ anyTime = R.operand mrDesc mr
       Right _ -> True
 
 -- | If the given ordering is @r@, the given time is @t@, and the
--- time of the subject is @s@, the Pdct returns @compare s t == r@.
+-- time of the subject is @s@, the Predbox returns @compare s t == r@.
 -- Always returns False if the subject is not a valid time.
 time
   :: Ordering
   -- ^ @r@
   -> Time.UTCTime
   -- ^ @t@
-  -> R.Pdct Text
-time ord ti = R.operand mrDesc mr
+  -> R.Predbox Text
+time ord ti = R.compareByMaybe desc (pack "time") mr ord
   where
-    mrDesc = pack $ "subject time is " ++ d ++ " " ++ show ti
-      where
-        d = case ord of
-          EQ -> "equal to"
-          LT -> "less than"
-          GT -> "greater than"
+    desc = pack . show $ ti
     mr x = case P.parse dateTime "" x of
-      Left _ -> False
-      Right g -> compare g ti == ord
+      Left _ -> Nothing
+      Right g -> Just $ (g `compare` ti)
 
