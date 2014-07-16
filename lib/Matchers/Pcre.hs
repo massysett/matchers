@@ -1,25 +1,23 @@
 {-# LANGUAGE Trustworthy #-}
-module Text.Matchers.Pcre
-  ( B.Caseless
-  , B.Regex
-  , B.reCaseless
-  , B.rePattern
+module Matchers.Pcre
+  ( B.PCRE
   , compile
   , exec
   ) where
 
-import qualified Text.Matchers.Pcre.Base as B
+import qualified Matchers.Pcre.Base as B
 import qualified Data.Text as X
 import System.IO.Unsafe (unsafePerformIO)
+import Matchers.Types
 
 compile
-  :: B.Caseless
+  :: CaseSensitive
   -> X.Text
-  -> Either String B.Regex
+  -> Either String B.PCRE
 compile cl x = unsafePerformIO $ B.compile cl x
 
 exec
-  :: B.Regex
+  :: B.PCRE
   -> X.Text
   -> Maybe Bool
 exec r x = unsafePerformIO $ B.exec r x

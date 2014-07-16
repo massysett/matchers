@@ -1,18 +1,7 @@
-{-# LANGUAGE ForeignFunctionInterface, EmptyDataDecls #-}
+{-# LANGUAGE ForeignFunctionInterface, Safe, EmptyDataDecls #-}
 
-module Text.Matchers.Pcre.Base
-  ( caseless
-  , PCRE
-  , PCRE_Extra
-  , c_free
-  , c_pcre_compile
-  , c_pcre_exec
-  , Caseless
-  , pcre_compile
-  , pcre_exec
-  , Regex
-  , reCaseless
-  , rePattern
+module Matchers.Pcre.Base
+  ( PCRE
   , compile
   , exec
   ) where
@@ -26,6 +15,7 @@ import Foreign.Ptr
 import Data.ByteString
 import Data.Text
 import Data.Text.Encoding
+import Matchers.Types
 
 #include <pcre.h>
 #include <stdlib.h>
@@ -33,10 +23,10 @@ import Data.Text.Encoding
 caseless :: CInt
 caseless = #const PCRE_CASELESS
 
-data PCRE
+data PCREData
 
-instance Show PCRE where
-  show _ = "PCRE"
+instance Show PCREData where
+  show _ = "PCREData"
 
 data PCRE_Extra
 
@@ -58,14 +48,17 @@ foreign import ccall unsafe "pcre.h pcre_compile"
     -- ^ OUT Error offset
     -> Ptr CUChar
     -- ^ Pointer to character table. Use NULL for default.
-    -> IO (Ptr PCRE)
+    -> IO (Ptr PCREData)
 
 foreign import ccall unsafe "pcre.h pcre_exec"
   c_pcre_exec
-    :: Ptr PCRE
+    :: Ptr PCREData
     -- ^ Regex
+
     -> Ptr PCRE_Extra
-    -- ^ Result of study
+    -- ^ Result of study.  Just pass NULL if you did not study the
+    -- pattern.
+
     -> CString
     -- ^ Subject
     -> CInt
@@ -83,19 +76,17 @@ foreign import ccall unsafe "pcre.h pcre_exec"
     -> IO CInt
     -- ^ One more than the highest numbered pair that has been set.
 
-type Caseless = Bool
-
 pcre_compile
-  :: Caseless
+  :: CaseSensitive
   -> Text
   -- ^ Pattern
-  -> IO (Either String (Ptr PCRE))
+  -> IO (Either String (Ptr PCREData))
   -- ^ Errors are indicated with a Left with the error message.
 pcre_compile cl pat
   = useAsCString (encodeUtf8 pat) $ \patC ->
     alloca $ \ptrMsg ->
     alloca $ \ptrOffset -> do
-      let cOpt = if cl then caseless else 0
+      let cOpt = if cl == Insensitive then caseless else 0
       ptrPcre <- c_pcre_compile patC cOpt ptrMsg ptrOffset nullPtr
       if ptrPcre == nullPtr
         then do
@@ -105,7 +96,7 @@ pcre_compile cl pat
         else return . Right $ ptrPcre
           
   
-pcre_exec :: Ptr PCRE -> Text -> IO (Maybe Bool)
+pcre_exec :: Ptr PCREData -> Text -> IO (Maybe Bool)
 pcre_exec ptr txt
   = useAsCStringLen (encodeUtf8 txt) $ \(ptrSubj, len) ->
     allocaArray 30 $ \array -> do
@@ -116,20 +107,17 @@ pcre_exec ptr txt
           | r < (-1) -> Nothing
           | otherwise -> Just True
         
-data Regex = Regex
-  { reCaseless :: Caseless
-  , rePattern :: Text
-  , _rePtr :: ForeignPtr PCRE
-  } deriving Show
+newtype PCRE = PCRE (ForeignPtr PCREData)
+  deriving Show
 
-compile :: Caseless -> Text -> IO (Either String Regex)
+compile :: CaseSensitive -> Text -> IO (Either String PCRE)
 compile cl pat = do
   ei <- pcre_compile cl pat
   case ei of
     Left e -> return . Left $ e
     Right ptr -> do
       fp <- newForeignPtr c_free ptr
-      return . Right $ Regex cl pat fp
+      return . Right $ PCRE fp
 
-exec :: Regex -> Text -> IO (Maybe Bool)
-exec (Regex _ _ fp) s = withForeignPtr fp $ \p -> pcre_exec p s
+exec :: PCRE -> Text -> IO (Maybe Bool)
+exec (PCRE fp) s = withForeignPtr fp $ \p -> pcre_exec p s

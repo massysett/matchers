@@ -1,8 +1,8 @@
 -- | Time parsers.
 --
--- "Text.Matchers" allows you to perform matching based on times.
+-- "Matchers" allows you to perform matching based on times.
 -- Times are parsed using the parsers in this module.
-module Text.Matchers.Times where
+module Matchers.Times where
 
 import Data.Fixed
 import Data.Maybe
