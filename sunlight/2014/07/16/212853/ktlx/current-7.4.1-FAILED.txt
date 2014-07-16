@@ -1,0 +1,830 @@
+Current time: 2014-07-16 21:28:53.457611 UTC
+ghc-7.4.1 ["--version"] succeeded with exit code 0
+Standard output:
+The Glorious Glasgow Haskell Compilation System, version 7.4.1
+
+Standard error:
+<empty>
+
+ghc-pkg-7.4.1 ["--version"] succeeded with exit code 0
+Standard output:
+GHC package manager version 7.4.1
+
+Standard error:
+<empty>
+
+cabal ["--version"] succeeded with exit code 0
+Standard output:
+cabal-install version 1.20.0.2
+using version 1.20.0.1 of the Cabal library 
+
+Standard error:
+<empty>
+
+ghc-7.4.1 ["--make","-outputdir","/home/massysett/matchers/sunlight-22150","-o","/home/massysett/matchers/sunlight-22150/Setup","Setup.hs"] succeeded with exit code 0
+Standard output:
+[1 of 1] Compiling Main             ( Setup.hs, /home/massysett/matchers/sunlight-22150/Main.o )
+Linking /home/massysett/matchers/sunlight-22150/Setup ...
+
+Standard error:
+<empty>
+
+/home/massysett/matchers/sunlight-22150/Setup ["sdist","--output-directory=/home/massysett/matchers/sunlight-22150/distDeps"] succeeded with exit code 0
+Standard output:
+Building source dist for matchers-0.20.0.0...
+Source directory created: /home/massysett/matchers/sunlight-22150/distDeps
+
+Standard error:
+Warning: Cannot run preprocessors. Run 'configure' command first.
+
+/home/massysett/matchers/sunlight-22150/Setup ["sdist","--output-directory=/home/massysett/matchers/sunlight-22150/distPkg"] succeeded with exit code 0
+Standard output:
+Building source dist for matchers-0.20.0.0...
+Source directory created: /home/massysett/matchers/sunlight-22150/distPkg
+
+Standard error:
+Warning: Cannot run preprocessors. Run 'configure' command first.
+
+ghc-pkg-7.4.1 ["init","/home/massysett/matchers/sunlight-22150/db"] succeeded with exit code 0
+Standard output:
+<empty>
+
+Standard error:
+<empty>
+
+cabal ["install","--verbose=2","--with-compiler=ghc-7.4.1","--with-hc-pkg=ghc-pkg-7.4.1","--prefix=/home/massysett/matchers/sunlight-22150/prefix","--disable-library-profiling","--disable-executable-profiling","--package-db=clear","--package-db=global","--package-db=/home/massysett/matchers/sunlight-22150/db","--enable-tests","--disable-documentation","--only-dependencies"] succeeded with exit code 0
+Standard output:
+Reading available packages...
+Choosing modular solver.
+Resolving dependencies...
+Ready to install split-0.2.2
+Extracting
+/home/massysett/.cabal/packages/hackage.haskell.org/split/0.2.2/split-0.2.2.tar.gz
+to /tmp/split-0.2.2-24211...
+Updating split.cabal with the latest revision from the index.
+Configuring split-0.2.2...
+Ready to install tagged-0.7.2
+creating /tmp/split-0.2.2-24211/split-0.2.2/dist/setup
+Ready to install terminfo-0.4.0.0
+Extracting
+/home/massysett/.cabal/packages/hackage.haskell.org/tagged/0.7.2/tagged-0.7.2.tar.gz
+creating /tmp/split-0.2.2-24211/split-0.2.2/dist
+to /tmp/tagged-0.7.2-24211...
+Extracting
+Ready to install text-1.1.1.3
+/home/massysett/.cabal/packages/hackage.haskell.org/terminfo/0.4.0.0/terminfo-0.4.0.0.tar.gz
+creating /tmp/split-0.2.2-24211/split-0.2.2/dist/setup
+Updating tagged.cabal with the latest revision from the index.
+to /tmp/terminfo-0.4.0.0-24211...
+Ready to install transformers-0.4.1.0
+Extracting
+Configuring tagged-0.7.2...
+/home/massysett/.cabal/packages/hackage.haskell.org/text/1.1.1.3/text-1.1.1.3.tar.gz
+Updating terminfo.cabal with the latest revision from the index.
+to /tmp/text-1.1.1.3-24211...
+Waiting for install task to finish...
+Extracting
+/home/massysett/.cabal/packages/hackage.haskell.org/transformers/0.4.1.0/transformers-0.4.1.0.tar.gz
+creating /tmp/tagged-0.7.2-24211/tagged-0.7.2/dist/setup
+to /tmp/transformers-0.4.1.0-24211...
+Updating text.cabal with the latest revision from the index.
+Configuring terminfo-0.4.0.0...
+creating /tmp/tagged-0.7.2-24211/tagged-0.7.2/dist
+Updating transformers.cabal with the latest revision from the index.
+Configuring text-1.1.1.3...
+creating /tmp/terminfo-0.4.0.0-24211/terminfo-0.4.0.0/dist/setup
+creating /tmp/tagged-0.7.2-24211/tagged-0.7.2/dist/setup
+creating /tmp/text-1.1.1.3-24211/text-1.1.1.3/dist/setup
+creating /tmp/text-1.1.1.3-24211/text-1.1.1.3/dist
+creating /tmp/text-1.1.1.3-24211/text-1.1.1.3/dist/setup
+creating /tmp/terminfo-0.4.0.0-24211/terminfo-0.4.0.0/dist
+creating /tmp/terminfo-0.4.0.0-24211/terminfo-0.4.0.0/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+configure --verbose=2 --ghc --with-compiler=ghc-7.4.1
+--with-hc-pkg=ghc-pkg-7.4.1
+--prefix=/home/massysett/matchers/sunlight-22150/prefix
+--bindir=/home/massysett/matchers/sunlight-22150/prefix/bin
+--libdir=/home/massysett/matchers/sunlight-22150/prefix/lib
+--libsubdir=x86_64-linux-ghc-7.4.1/split-0.2.2
+--libexecdir=/home/massysett/matchers/sunlight-22150/prefix/libexec
+--datadir=/home/massysett/matchers/sunlight-22150/prefix/share
+--datasubdir=x86_64-linux-ghc-7.4.1/split-0.2.2
+--docdir=/home/massysett/matchers/sunlight-22150/prefix/share/doc/x86_64-linux-ghc-7.4.1/split-0.2.2
+--htmldir=/home/massysett/matchers/sunlight-22150/prefix/share/doc/x86_64-linux-ghc-7.4.1/split-0.2.2/html
+--haddockdir=/home/massysett/matchers/sunlight-22150/prefix/share/doc/x86_64-linux-ghc-7.4.1/split-0.2.2/html
+--disable-library-profiling --disable-executable-profiling --user
+--package-db=clear --package-db=global
+--package-db=/home/massysett/matchers/sunlight-22150/db --constraint=base
+==4.5.0.0 --disable-tests --disable-benchmarks
+Redirecting build log to {handle: /home/massysett/.cabal/logs/split-0.2.2.log}
+/home/massysett/.cabal/setup-exe-cache/setup-Configure-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+configure --verbose=2 --ghc --with-compiler=ghc-7.4.1
+--with-hc-pkg=ghc-pkg-7.4.1
+--prefix=/home/massysett/matchers/sunlight-22150/prefix
+--bindir=/home/massysett/matchers/sunlight-22150/prefix/bin
+--libdir=/home/massysett/matchers/sunlight-22150/prefix/lib
+--libsubdir=x86_64-linux-ghc-7.4.1/terminfo-0.4.0.0
+--libexecdir=/home/massysett/matchers/sunlight-22150/prefix/libexec
+--datadir=/home/massysett/matchers/sunlight-22150/prefix/share
+--datasubdir=x86_64-linux-ghc-7.4.1/terminfo-0.4.0.0
+--docdir=/home/massysett/matchers/sunlight-22150/prefix/share/doc/x86_64-linux-ghc-7.4.1/terminfo-0.4.0.0
+--htmldir=/home/massysett/matchers/sunlight-22150/prefix/share/doc/x86_64-linux-ghc-7.4.1/terminfo-0.4.0.0/html
+--haddockdir=/home/massysett/matchers/sunlight-22150/prefix/share/doc/x86_64-linux-ghc-7.4.1/terminfo-0.4.0.0/html
+--disable-library-profiling --disable-executable-profiling --user
+--package-db=clear --package-db=global
+--package-db=/home/massysett/matchers/sunlight-22150/db --constraint=base
+==4.5.0.0 --disable-tests --disable-benchmarks
+Redirecting build log to {handle:
+/home/massysett/.cabal/logs/terminfo-0.4.0.0.log}
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+configure --verbose=2 --ghc --with-compiler=ghc-7.4.1
+--with-hc-pkg=ghc-pkg-7.4.1
+--prefix=/home/massysett/matchers/sunlight-22150/prefix
+--bindir=/home/massysett/matchers/sunlight-22150/prefix/bin
+--libdir=/home/massysett/matchers/sunlight-22150/prefix/lib
+--libsubdir=x86_64-linux-ghc-7.4.1/tagged-0.7.2
+--libexecdir=/home/massysett/matchers/sunlight-22150/prefix/libexec
+--datadir=/home/massysett/matchers/sunlight-22150/prefix/share
+--datasubdir=x86_64-linux-ghc-7.4.1/tagged-0.7.2
+--docdir=/home/massysett/matchers/sunlight-22150/prefix/share/doc/x86_64-linux-ghc-7.4.1/tagged-0.7.2
+--htmldir=/home/massysett/matchers/sunlight-22150/prefix/share/doc/x86_64-linux-ghc-7.4.1/tagged-0.7.2/html
+--haddockdir=/home/massysett/matchers/sunlight-22150/prefix/share/doc/x86_64-linux-ghc-7.4.1/tagged-0.7.2/html
+--disable-library-profiling --disable-executable-profiling --user
+--package-db=clear --package-db=global
+--package-db=/home/massysett/matchers/sunlight-22150/db --constraint=base
+==4.5.0.0 --disable-tests --disable-benchmarks
+Redirecting build log to {handle:
+/home/massysett/.cabal/logs/tagged-0.7.2.log}
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+configure --verbose=2 --ghc --with-compiler=ghc-7.4.1
+--with-hc-pkg=ghc-pkg-7.4.1
+--prefix=/home/massysett/matchers/sunlight-22150/prefix
+--bindir=/home/massysett/matchers/sunlight-22150/prefix/bin
+--libdir=/home/massysett/matchers/sunlight-22150/prefix/lib
+--libsubdir=x86_64-linux-ghc-7.4.1/text-1.1.1.3
+--libexecdir=/home/massysett/matchers/sunlight-22150/prefix/libexec
+--datadir=/home/massysett/matchers/sunlight-22150/prefix/share
+--datasubdir=x86_64-linux-ghc-7.4.1/text-1.1.1.3
+--docdir=/home/massysett/matchers/sunlight-22150/prefix/share/doc/x86_64-linux-ghc-7.4.1/text-1.1.1.3
+--htmldir=/home/massysett/matchers/sunlight-22150/prefix/share/doc/x86_64-linux-ghc-7.4.1/text-1.1.1.3/html
+--haddockdir=/home/massysett/matchers/sunlight-22150/prefix/share/doc/x86_64-linux-ghc-7.4.1/text-1.1.1.3/html
+--disable-library-profiling --disable-executable-profiling --user
+--package-db=clear --package-db=global
+--package-db=/home/massysett/matchers/sunlight-22150/db
+--flags=-integer-simple --flags=-developer --constraint=integer-gmp ==0.4.0.0
+--constraint=ghc-prim ==0.2.0.0 --constraint=deepseq ==1.3.0.0
+--constraint=bytestring ==0.9.2.1 --constraint=base ==4.5.0.0
+--constraint=array ==0.4.0.0 --disable-tests --disable-benchmarks
+Redirecting build log to {handle:
+/home/massysett/.cabal/logs/text-1.1.1.3.log}
+Building split-0.2.2...
+creating /tmp/split-0.2.2-24211/split-0.2.2/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+build --verbose=2
+Redirecting build log to {handle: /home/massysett/.cabal/logs/split-0.2.2.log}
+Building tagged-0.7.2...
+creating /tmp/tagged-0.7.2-24211/tagged-0.7.2/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+build --verbose=2
+Redirecting build log to {handle:
+/home/massysett/.cabal/logs/tagged-0.7.2.log}
+Building text-1.1.1.3...
+creating /tmp/text-1.1.1.3-24211/text-1.1.1.3/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+build --verbose=2
+Redirecting build log to {handle:
+/home/massysett/.cabal/logs/text-1.1.1.3.log}
+creating /tmp/split-0.2.2-24211/split-0.2.2/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+register --verbose=2 --gen-pkg-config=/tmp/pkgConf-split-0.224211.2
+Redirecting build log to {handle: /home/massysett/.cabal/logs/split-0.2.2.log}
+creating /tmp/split-0.2.2-24211/split-0.2.2/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+copy --verbose=2
+Redirecting build log to {handle: /home/massysett/.cabal/logs/split-0.2.2.log}
+creating /tmp/split-0.2.2-24211/split-0.2.2/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+register --verbose=2
+Redirecting build log to {handle: /home/massysett/.cabal/logs/split-0.2.2.log}
+Building terminfo-0.4.0.0...
+creating /tmp/terminfo-0.4.0.0-24211/terminfo-0.4.0.0/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Configure-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+build --verbose=2
+Redirecting build log to {handle:
+/home/massysett/.cabal/logs/terminfo-0.4.0.0.log}
+Configuring transformers-0.4.1.0...
+creating /tmp/transformers-0.4.1.0-24211/transformers-0.4.1.0/dist/setup
+creating /tmp/transformers-0.4.1.0-24211/transformers-0.4.1.0/dist
+creating /tmp/transformers-0.4.1.0-24211/transformers-0.4.1.0/dist/setup
+Installed split-0.2.2
+Waiting for install task to finish...
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+configure --verbose=2 --ghc --with-compiler=ghc-7.4.1
+--with-hc-pkg=ghc-pkg-7.4.1
+--prefix=/home/massysett/matchers/sunlight-22150/prefix
+--bindir=/home/massysett/matchers/sunlight-22150/prefix/bin
+--libdir=/home/massysett/matchers/sunlight-22150/prefix/lib
+--libsubdir=x86_64-linux-ghc-7.4.1/transformers-0.4.1.0
+--libexecdir=/home/massysett/matchers/sunlight-22150/prefix/libexec
+--datadir=/home/massysett/matchers/sunlight-22150/prefix/share
+--datasubdir=x86_64-linux-ghc-7.4.1/transformers-0.4.1.0
+--docdir=/home/massysett/matchers/sunlight-22150/prefix/share/doc/x86_64-linux-ghc-7.4.1/transformers-0.4.1.0
+--htmldir=/home/massysett/matchers/sunlight-22150/prefix/share/doc/x86_64-linux-ghc-7.4.1/transformers-0.4.1.0/html
+--haddockdir=/home/massysett/matchers/sunlight-22150/prefix/share/doc/x86_64-linux-ghc-7.4.1/transformers-0.4.1.0/html
+--disable-library-profiling --disable-executable-profiling --user
+--package-db=clear --package-db=global
+--package-db=/home/massysett/matchers/sunlight-22150/db
+--flags=applicativeinbase --constraint=base ==4.5.0.0 --disable-tests
+--disable-benchmarks
+Redirecting build log to {handle:
+/home/massysett/.cabal/logs/transformers-0.4.1.0.log}
+creating /tmp/tagged-0.7.2-24211/tagged-0.7.2/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+register --verbose=2 --gen-pkg-config=/tmp/pkgConf-tagged-0.724211.2
+Redirecting build log to {handle:
+/home/massysett/.cabal/logs/tagged-0.7.2.log}
+creating /tmp/tagged-0.7.2-24211/tagged-0.7.2/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+copy --verbose=2
+Redirecting build log to {handle:
+/home/massysett/.cabal/logs/tagged-0.7.2.log}
+Building transformers-0.4.1.0...
+creating /tmp/transformers-0.4.1.0-24211/transformers-0.4.1.0/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+build --verbose=2
+Redirecting build log to {handle:
+/home/massysett/.cabal/logs/transformers-0.4.1.0.log}
+creating /tmp/tagged-0.7.2-24211/tagged-0.7.2/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+register --verbose=2
+Redirecting build log to {handle:
+/home/massysett/.cabal/logs/tagged-0.7.2.log}
+Installed tagged-0.7.2
+Waiting for install task to finish...
+creating /tmp/terminfo-0.4.0.0-24211/terminfo-0.4.0.0/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Configure-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+register --verbose=2 --gen-pkg-config=/tmp/pkgConf-terminfo-0.4.024211.0
+Redirecting build log to {handle:
+/home/massysett/.cabal/logs/terminfo-0.4.0.0.log}
+creating /tmp/terminfo-0.4.0.0-24211/terminfo-0.4.0.0/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Configure-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+copy --verbose=2
+Redirecting build log to {handle:
+/home/massysett/.cabal/logs/terminfo-0.4.0.0.log}
+creating /tmp/terminfo-0.4.0.0-24211/terminfo-0.4.0.0/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Configure-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+register --verbose=2
+Redirecting build log to {handle:
+/home/massysett/.cabal/logs/terminfo-0.4.0.0.log}
+Installed terminfo-0.4.0.0
+Waiting for install task to finish...
+creating /tmp/transformers-0.4.1.0-24211/transformers-0.4.1.0/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+register --verbose=2 --gen-pkg-config=/tmp/pkgConf-transformers-0.4.124211.0
+Redirecting build log to {handle:
+/home/massysett/.cabal/logs/transformers-0.4.1.0.log}
+creating /tmp/transformers-0.4.1.0-24211/transformers-0.4.1.0/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+copy --verbose=2
+Redirecting build log to {handle:
+/home/massysett/.cabal/logs/transformers-0.4.1.0.log}
+creating /tmp/transformers-0.4.1.0-24211/transformers-0.4.1.0/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+register --verbose=2
+Redirecting build log to {handle:
+/home/massysett/.cabal/logs/transformers-0.4.1.0.log}
+Installed transformers-0.4.1.0
+Ready to install mtl-2.2.1
+Extracting
+/home/massysett/.cabal/packages/hackage.haskell.org/mtl/2.2.1/mtl-2.2.1.tar.gz
+Ready to install transformers-compat-0.3.3.4
+to /tmp/mtl-2.2.1-24211...
+Waiting for install task to finish...
+Extracting
+/home/massysett/.cabal/packages/hackage.haskell.org/transformers-compat/0.3.3.4/transformers-compat-0.3.3.4.tar.gz
+Updating mtl.cabal with the latest revision from the index.
+to /tmp/transformers-compat-0.3.3.4-24211...
+Configuring mtl-2.2.1...
+Updating transformers-compat.cabal with the latest revision from the index.
+creating /tmp/mtl-2.2.1-24211/mtl-2.2.1/dist/setup
+Configuring transformers-compat-0.3.3.4...
+creating /tmp/mtl-2.2.1-24211/mtl-2.2.1/dist
+creating
+/tmp/transformers-compat-0.3.3.4-24211/transformers-compat-0.3.3.4/dist/setup
+creating /tmp/mtl-2.2.1-24211/mtl-2.2.1/dist/setup
+creating
+/tmp/transformers-compat-0.3.3.4-24211/transformers-compat-0.3.3.4/dist
+creating
+/tmp/transformers-compat-0.3.3.4-24211/transformers-compat-0.3.3.4/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+configure --verbose=2 --ghc --with-compiler=ghc-7.4.1
+--with-hc-pkg=ghc-pkg-7.4.1
+--prefix=/home/massysett/matchers/sunlight-22150/prefix
+--bindir=/home/massysett/matchers/sunlight-22150/prefix/bin
+--libdir=/home/massysett/matchers/sunlight-22150/prefix/lib
+--libsubdir=x86_64-linux-ghc-7.4.1/transformers-compat-0.3.3.4
+--libexecdir=/home/massysett/matchers/sunlight-22150/prefix/libexec
+--datadir=/home/massysett/matchers/sunlight-22150/prefix/share
+--datasubdir=x86_64-linux-ghc-7.4.1/transformers-compat-0.3.3.4
+--docdir=/home/massysett/matchers/sunlight-22150/prefix/share/doc/x86_64-linux-ghc-7.4.1/transformers-compat-0.3.3.4
+--htmldir=/home/massysett/matchers/sunlight-22150/prefix/share/doc/x86_64-linux-ghc-7.4.1/transformers-compat-0.3.3.4/html
+--haddockdir=/home/massysett/matchers/sunlight-22150/prefix/share/doc/x86_64-linux-ghc-7.4.1/transformers-compat-0.3.3.4/html
+--disable-library-profiling --disable-executable-profiling --user
+--package-db=clear --package-db=global
+--package-db=/home/massysett/matchers/sunlight-22150/db --flags=-two
+--flags=-three --constraint=transformers ==0.4.1.0 --constraint=base ==4.5.0.0
+--disable-tests --disable-benchmarks
+Redirecting build log to {handle:
+/home/massysett/.cabal/logs/transformers-compat-0.3.3.4.log}
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+configure --verbose=2 --ghc --with-compiler=ghc-7.4.1
+--with-hc-pkg=ghc-pkg-7.4.1
+--prefix=/home/massysett/matchers/sunlight-22150/prefix
+--bindir=/home/massysett/matchers/sunlight-22150/prefix/bin
+--libdir=/home/massysett/matchers/sunlight-22150/prefix/lib
+--libsubdir=x86_64-linux-ghc-7.4.1/mtl-2.2.1
+--libexecdir=/home/massysett/matchers/sunlight-22150/prefix/libexec
+--datadir=/home/massysett/matchers/sunlight-22150/prefix/share
+--datasubdir=x86_64-linux-ghc-7.4.1/mtl-2.2.1
+--docdir=/home/massysett/matchers/sunlight-22150/prefix/share/doc/x86_64-linux-ghc-7.4.1/mtl-2.2.1
+--htmldir=/home/massysett/matchers/sunlight-22150/prefix/share/doc/x86_64-linux-ghc-7.4.1/mtl-2.2.1/html
+--haddockdir=/home/massysett/matchers/sunlight-22150/prefix/share/doc/x86_64-linux-ghc-7.4.1/mtl-2.2.1/html
+--disable-library-profiling --disable-executable-profiling --user
+--package-db=clear --package-db=global
+--package-db=/home/massysett/matchers/sunlight-22150/db
+--constraint=transformers ==0.4.1.0 --constraint=base ==4.5.0.0
+--disable-tests --disable-benchmarks
+Redirecting build log to {handle: /home/massysett/.cabal/logs/mtl-2.2.1.log}
+Building mtl-2.2.1...
+creating /tmp/mtl-2.2.1-24211/mtl-2.2.1/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+build --verbose=2
+Redirecting build log to {handle: /home/massysett/.cabal/logs/mtl-2.2.1.log}
+Building transformers-compat-0.3.3.4...
+creating
+/tmp/transformers-compat-0.3.3.4-24211/transformers-compat-0.3.3.4/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+build --verbose=2
+Redirecting build log to {handle:
+/home/massysett/.cabal/logs/transformers-compat-0.3.3.4.log}
+creating
+/tmp/transformers-compat-0.3.3.4-24211/transformers-compat-0.3.3.4/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+register --verbose=2
+--gen-pkg-config=/tmp/pkgConf-transformers-compat-0.3.324211.4
+Redirecting build log to {handle:
+/home/massysett/.cabal/logs/transformers-compat-0.3.3.4.log}
+creating
+/tmp/transformers-compat-0.3.3.4-24211/transformers-compat-0.3.3.4/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+copy --verbose=2
+Redirecting build log to {handle:
+/home/massysett/.cabal/logs/transformers-compat-0.3.3.4.log}
+creating
+/tmp/transformers-compat-0.3.3.4-24211/transformers-compat-0.3.3.4/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+register --verbose=2
+Redirecting build log to {handle:
+/home/massysett/.cabal/logs/transformers-compat-0.3.3.4.log}
+Installed transformers-compat-0.3.3.4
+Ready to install contravariant-0.6
+Extracting
+/home/massysett/.cabal/packages/hackage.haskell.org/contravariant/0.6/contravariant-0.6.tar.gz
+to /tmp/contravariant-0.6-24211...
+Waiting for install task to finish...
+Updating contravariant.cabal with the latest revision from the index.
+Configuring contravariant-0.6...
+creating /tmp/contravariant-0.6-24211/contravariant-0.6/dist/setup
+creating /tmp/contravariant-0.6-24211/contravariant-0.6/dist
+creating /tmp/contravariant-0.6-24211/contravariant-0.6/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+configure --verbose=2 --ghc --with-compiler=ghc-7.4.1
+--with-hc-pkg=ghc-pkg-7.4.1
+--prefix=/home/massysett/matchers/sunlight-22150/prefix
+--bindir=/home/massysett/matchers/sunlight-22150/prefix/bin
+--libdir=/home/massysett/matchers/sunlight-22150/prefix/lib
+--libsubdir=x86_64-linux-ghc-7.4.1/contravariant-0.6
+--libexecdir=/home/massysett/matchers/sunlight-22150/prefix/libexec
+--datadir=/home/massysett/matchers/sunlight-22150/prefix/share
+--datasubdir=x86_64-linux-ghc-7.4.1/contravariant-0.6
+--docdir=/home/massysett/matchers/sunlight-22150/prefix/share/doc/x86_64-linux-ghc-7.4.1/contravariant-0.6
+--htmldir=/home/massysett/matchers/sunlight-22150/prefix/share/doc/x86_64-linux-ghc-7.4.1/contravariant-0.6/html
+--haddockdir=/home/massysett/matchers/sunlight-22150/prefix/share/doc/x86_64-linux-ghc-7.4.1/contravariant-0.6/html
+--disable-library-profiling --disable-executable-profiling --user
+--package-db=clear --package-db=global
+--package-db=/home/massysett/matchers/sunlight-22150/db --flags=tagged
+--constraint=transformers-compat ==0.3.3.4 --constraint=transformers ==0.4.1.0
+--constraint=tagged ==0.7.2 --constraint=ghc-prim ==0.2.0.0 --constraint=base
+==4.5.0.0 --disable-tests --disable-benchmarks
+Redirecting build log to {handle:
+/home/massysett/.cabal/logs/contravariant-0.6.log}
+Building contravariant-0.6...
+creating /tmp/contravariant-0.6-24211/contravariant-0.6/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+build --verbose=2
+Redirecting build log to {handle:
+/home/massysett/.cabal/logs/contravariant-0.6.log}
+creating /tmp/mtl-2.2.1-24211/mtl-2.2.1/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+register --verbose=2 --gen-pkg-config=/tmp/pkgConf-mtl-2.224211.1
+Redirecting build log to {handle: /home/massysett/.cabal/logs/mtl-2.2.1.log}
+creating /tmp/mtl-2.2.1-24211/mtl-2.2.1/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+copy --verbose=2
+Redirecting build log to {handle: /home/massysett/.cabal/logs/mtl-2.2.1.log}
+creating /tmp/mtl-2.2.1-24211/mtl-2.2.1/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+register --verbose=2
+Redirecting build log to {handle: /home/massysett/.cabal/logs/mtl-2.2.1.log}
+creating /tmp/contravariant-0.6-24211/contravariant-0.6/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+register --verbose=2 --gen-pkg-config=/tmp/pkgConf-contravariant-024211.6
+Redirecting build log to {handle:
+/home/massysett/.cabal/logs/contravariant-0.6.log}
+Installed mtl-2.2.1
+Waiting for install task to finish...
+creating /tmp/contravariant-0.6-24211/contravariant-0.6/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+copy --verbose=2
+Redirecting build log to {handle:
+/home/massysett/.cabal/logs/contravariant-0.6.log}
+creating /tmp/contravariant-0.6-24211/contravariant-0.6/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+register --verbose=2
+Redirecting build log to {handle:
+/home/massysett/.cabal/logs/contravariant-0.6.log}
+Installed contravariant-0.6
+Waiting for install task to finish...
+creating /tmp/text-1.1.1.3-24211/text-1.1.1.3/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+register --verbose=2 --gen-pkg-config=/tmp/pkgConf-text-1.1.124211.3
+Redirecting build log to {handle:
+/home/massysett/.cabal/logs/text-1.1.1.3.log}
+creating /tmp/text-1.1.1.3-24211/text-1.1.1.3/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+copy --verbose=2
+Redirecting build log to {handle:
+/home/massysett/.cabal/logs/text-1.1.1.3.log}
+creating /tmp/text-1.1.1.3-24211/text-1.1.1.3/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+register --verbose=2
+Redirecting build log to {handle:
+/home/massysett/.cabal/logs/text-1.1.1.3.log}
+Installed text-1.1.1.3
+Ready to install parsec-3.1.5
+Extracting
+/home/massysett/.cabal/packages/hackage.haskell.org/parsec/3.1.5/parsec-3.1.5.tar.gz
+to /tmp/parsec-3.1.5-24211...
+Ready to install rainbow-0.14.0.2
+Updating parsec.cabal with the latest revision from the index.
+Configuring parsec-3.1.5...
+creating /tmp/parsec-3.1.5-24211/parsec-3.1.5/dist/setup
+creating /tmp/parsec-3.1.5-24211/parsec-3.1.5/dist
+creating /tmp/parsec-3.1.5-24211/parsec-3.1.5/dist/setup
+Waiting for install task to finish...
+Extracting
+/home/massysett/.cabal/packages/hackage.haskell.org/rainbow/0.14.0.2/rainbow-0.14.0.2.tar.gz
+to /tmp/rainbow-0.14.0.2-24211...
+Updating rainbow.cabal with the latest revision from the index.
+Configuring rainbow-0.14.0.2...
+creating /tmp/rainbow-0.14.0.2-24211/rainbow-0.14.0.2/dist/setup
+creating /tmp/rainbow-0.14.0.2-24211/rainbow-0.14.0.2/dist
+creating /tmp/rainbow-0.14.0.2-24211/rainbow-0.14.0.2/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+configure --verbose=2 --ghc --with-compiler=ghc-7.4.1
+--with-hc-pkg=ghc-pkg-7.4.1
+--prefix=/home/massysett/matchers/sunlight-22150/prefix
+--bindir=/home/massysett/matchers/sunlight-22150/prefix/bin
+--libdir=/home/massysett/matchers/sunlight-22150/prefix/lib
+--libsubdir=x86_64-linux-ghc-7.4.1/parsec-3.1.5
+--libexecdir=/home/massysett/matchers/sunlight-22150/prefix/libexec
+--datadir=/home/massysett/matchers/sunlight-22150/prefix/share
+--datasubdir=x86_64-linux-ghc-7.4.1/parsec-3.1.5
+--docdir=/home/massysett/matchers/sunlight-22150/prefix/share/doc/x86_64-linux-ghc-7.4.1/parsec-3.1.5
+--htmldir=/home/massysett/matchers/sunlight-22150/prefix/share/doc/x86_64-linux-ghc-7.4.1/parsec-3.1.5/html
+--haddockdir=/home/massysett/matchers/sunlight-22150/prefix/share/doc/x86_64-linux-ghc-7.4.1/parsec-3.1.5/html
+--disable-library-profiling --disable-executable-profiling --user
+--package-db=clear --package-db=global
+--package-db=/home/massysett/matchers/sunlight-22150/db --flags=base4
+--constraint=text ==1.1.1.3 --constraint=mtl ==2.2.1 --constraint=bytestring
+==0.9.2.1 --constraint=base ==4.5.0.0 --disable-tests --disable-benchmarks
+Redirecting build log to {handle:
+/home/massysett/.cabal/logs/parsec-3.1.5.log}
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+configure --verbose=2 --ghc --with-compiler=ghc-7.4.1
+--with-hc-pkg=ghc-pkg-7.4.1
+--prefix=/home/massysett/matchers/sunlight-22150/prefix
+--bindir=/home/massysett/matchers/sunlight-22150/prefix/bin
+--libdir=/home/massysett/matchers/sunlight-22150/prefix/lib
+--libsubdir=x86_64-linux-ghc-7.4.1/rainbow-0.14.0.2
+--libexecdir=/home/massysett/matchers/sunlight-22150/prefix/libexec
+--datadir=/home/massysett/matchers/sunlight-22150/prefix/share
+--datasubdir=x86_64-linux-ghc-7.4.1/rainbow-0.14.0.2
+--docdir=/home/massysett/matchers/sunlight-22150/prefix/share/doc/x86_64-linux-ghc-7.4.1/rainbow-0.14.0.2
+--htmldir=/home/massysett/matchers/sunlight-22150/prefix/share/doc/x86_64-linux-ghc-7.4.1/rainbow-0.14.0.2/html
+--haddockdir=/home/massysett/matchers/sunlight-22150/prefix/share/doc/x86_64-linux-ghc-7.4.1/rainbow-0.14.0.2/html
+--disable-library-profiling --disable-executable-profiling --user
+--package-db=clear --package-db=global
+--package-db=/home/massysett/matchers/sunlight-22150/db --constraint=text
+==1.1.1.3 --constraint=terminfo ==0.4.0.0 --constraint=base ==4.5.0.0
+--disable-tests --disable-benchmarks
+Redirecting build log to {handle:
+/home/massysett/.cabal/logs/rainbow-0.14.0.2.log}
+Building parsec-3.1.5...
+creating /tmp/parsec-3.1.5-24211/parsec-3.1.5/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+build --verbose=2
+Redirecting build log to {handle:
+/home/massysett/.cabal/logs/parsec-3.1.5.log}
+Building rainbow-0.14.0.2...
+creating /tmp/rainbow-0.14.0.2-24211/rainbow-0.14.0.2/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+build --verbose=2
+Redirecting build log to {handle:
+/home/massysett/.cabal/logs/rainbow-0.14.0.2.log}
+creating /tmp/rainbow-0.14.0.2-24211/rainbow-0.14.0.2/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+register --verbose=2 --gen-pkg-config=/tmp/pkgConf-rainbow-0.14.024211.2
+Redirecting build log to {handle:
+/home/massysett/.cabal/logs/rainbow-0.14.0.2.log}
+creating /tmp/rainbow-0.14.0.2-24211/rainbow-0.14.0.2/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+copy --verbose=2
+Redirecting build log to {handle:
+/home/massysett/.cabal/logs/rainbow-0.14.0.2.log}
+creating /tmp/rainbow-0.14.0.2-24211/rainbow-0.14.0.2/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+register --verbose=2
+Redirecting build log to {handle:
+/home/massysett/.cabal/logs/rainbow-0.14.0.2.log}
+Installed rainbow-0.14.0.2
+Ready to install prednote-0.24.0.0
+Extracting
+/home/massysett/.cabal/packages/hackage.haskell.org/prednote/0.24.0.0/prednote-0.24.0.0.tar.gz
+Waiting for install task to finish...
+to /tmp/prednote-0.24.0.0-24211...
+Updating prednote.cabal with the latest revision from the index.
+Configuring prednote-0.24.0.0...
+creating /tmp/prednote-0.24.0.0-24211/prednote-0.24.0.0/dist/setup
+creating /tmp/prednote-0.24.0.0-24211/prednote-0.24.0.0/dist
+creating /tmp/prednote-0.24.0.0-24211/prednote-0.24.0.0/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+configure --verbose=2 --ghc --with-compiler=ghc-7.4.1
+--with-hc-pkg=ghc-pkg-7.4.1
+--prefix=/home/massysett/matchers/sunlight-22150/prefix
+--bindir=/home/massysett/matchers/sunlight-22150/prefix/bin
+--libdir=/home/massysett/matchers/sunlight-22150/prefix/lib
+--libsubdir=x86_64-linux-ghc-7.4.1/prednote-0.24.0.0
+--libexecdir=/home/massysett/matchers/sunlight-22150/prefix/libexec
+--datadir=/home/massysett/matchers/sunlight-22150/prefix/share
+--datasubdir=x86_64-linux-ghc-7.4.1/prednote-0.24.0.0
+--docdir=/home/massysett/matchers/sunlight-22150/prefix/share/doc/x86_64-linux-ghc-7.4.1/prednote-0.24.0.0
+--htmldir=/home/massysett/matchers/sunlight-22150/prefix/share/doc/x86_64-linux-ghc-7.4.1/prednote-0.24.0.0/html
+--haddockdir=/home/massysett/matchers/sunlight-22150/prefix/share/doc/x86_64-linux-ghc-7.4.1/prednote-0.24.0.0/html
+--disable-library-profiling --disable-executable-profiling --user
+--package-db=clear --package-db=global
+--package-db=/home/massysett/matchers/sunlight-22150/db --constraint=text
+==1.1.1.3 --constraint=split ==0.2.2 --constraint=rainbow ==0.14.0.2
+--constraint=contravariant ==0.6 --constraint=containers ==0.4.2.1
+--constraint=base ==4.5.0.0 --disable-tests --disable-benchmarks
+Redirecting build log to {handle:
+/home/massysett/.cabal/logs/prednote-0.24.0.0.log}
+Building prednote-0.24.0.0...
+creating /tmp/prednote-0.24.0.0-24211/prednote-0.24.0.0/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+build --verbose=2
+Redirecting build log to {handle:
+/home/massysett/.cabal/logs/prednote-0.24.0.0.log}
+creating /tmp/prednote-0.24.0.0-24211/prednote-0.24.0.0/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+register --verbose=2 --gen-pkg-config=/tmp/pkgConf-prednote-0.24.024211.0
+Redirecting build log to {handle:
+/home/massysett/.cabal/logs/prednote-0.24.0.0.log}
+creating /tmp/prednote-0.24.0.0-24211/prednote-0.24.0.0/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+copy --verbose=2
+Redirecting build log to {handle:
+/home/massysett/.cabal/logs/prednote-0.24.0.0.log}
+creating /tmp/prednote-0.24.0.0-24211/prednote-0.24.0.0/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+register --verbose=2
+Redirecting build log to {handle:
+/home/massysett/.cabal/logs/prednote-0.24.0.0.log}
+creating /tmp/parsec-3.1.5-24211/parsec-3.1.5/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+register --verbose=2 --gen-pkg-config=/tmp/pkgConf-parsec-3.124211.5
+Redirecting build log to {handle:
+/home/massysett/.cabal/logs/parsec-3.1.5.log}
+Installed prednote-0.24.0.0
+Waiting for install task to finish...
+creating /tmp/parsec-3.1.5-24211/parsec-3.1.5/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+copy --verbose=2
+Redirecting build log to {handle:
+/home/massysett/.cabal/logs/parsec-3.1.5.log}
+creating /tmp/parsec-3.1.5-24211/parsec-3.1.5/dist/setup
+/home/massysett/.cabal/setup-exe-cache/setup-Simple-Cabal-1.14.0-x86_64-linux-ghc-7.4.1
+register --verbose=2
+Redirecting build log to {handle:
+/home/massysett/.cabal/logs/parsec-3.1.5.log}
+Installed parsec-3.1.5
+
+Standard error:
+<empty>
+
+ghc-pkg-7.4.1 ["list","--global","--package-conf=/home/massysett/matchers/sunlight-22150/db"] succeeded with exit code 0
+Standard output:
+/opt/ghc/7.4.1/lib/ghc-7.4.1/package.conf.d:
+    Cabal-1.14.0
+    array-0.4.0.0
+    base-4.5.0.0
+    bin-package-db-0.0.0.0
+    binary-0.5.1.0
+    bytestring-0.9.2.1
+    containers-0.4.2.1
+    deepseq-1.3.0.0
+    directory-1.1.0.2
+    extensible-exceptions-0.1.1.4
+    filepath-1.3.0.0
+    (ghc-7.4.1)
+    ghc-prim-0.2.0.0
+    (haskell2010-1.1.0.1)
+    (haskell98-2.0.0.1)
+    hoopl-3.8.7.3
+    hpc-0.5.1.1
+    integer-gmp-0.4.0.0
+    old-locale-1.0.0.4
+    old-time-1.1.0.0
+    pretty-1.1.1.0
+    process-1.1.0.1
+    rts-1.0
+    template-haskell-2.7.0.0
+    time-1.4
+    unix-2.5.1.0
+
+/home/massysett/matchers/sunlight-22150/db:
+    contravariant-0.6
+    mtl-2.2.1
+    parsec-3.1.5
+    prednote-0.24.0.0
+    rainbow-0.14.0.2
+    split-0.2.2
+    tagged-0.7.2
+    terminfo-0.4.0.0
+    text-1.1.1.3
+    transformers-0.4.1.0
+    transformers-compat-0.3.3.4
+
+
+Standard error:
+<empty>
+
+ghc ["--make","Setup.hs"] succeeded with exit code 0
+Standard output:
+[1 of 1] Compiling Main             ( Setup.hs, Setup.o )
+Linking Setup ...
+
+Standard error:
+<empty>
+
+./Setup ["configure","--verbose=2","--with-compiler=ghc-7.4.1","--with-hc-pkg=ghc-pkg-7.4.1","--prefix=/home/massysett/matchers/sunlight-22150/prefix","--package-db=clear","--package-db=global","--package-db=/home/massysett/matchers/sunlight-22150/db","--enable-tests"] succeeded with exit code 0
+Standard output:
+Configuring matchers-0.20.0.0...
+Dependency base >=4.5.0.0 && <5: using base-4.5.0.0
+Dependency bytestring >=0.9.2.1 && <0.11: using bytestring-0.9.2.1
+Dependency parsec >=3.1.2 && <3.2: using parsec-3.1.5
+Dependency prednote >=0.24.0.0 && <0.25: using prednote-0.24.0.0
+Dependency text >=0.11.2.0 && <1.2: using text-1.1.1.3
+Dependency time ==1.4.*: using time-1.4
+/home/massysett/bin/ghc-7.4.1 --info
+Using Cabal-1.18.1.3 compiled by ghc-7.8
+Using compiler: ghc-7.4.1
+Using install prefix: /home/massysett/matchers/sunlight-22150/prefix
+Binaries installed in: /home/massysett/matchers/sunlight-22150/prefix/bin
+Libraries installed in:
+/home/massysett/matchers/sunlight-22150/prefix/lib/x86_64-linux-ghc-7.4.1/matchers-0.20.0.0
+Private binaries installed in:
+/home/massysett/matchers/sunlight-22150/prefix/libexec
+Data files installed in:
+/home/massysett/matchers/sunlight-22150/prefix/share/x86_64-linux-ghc-7.4.1/matchers-0.20.0.0
+Documentation installed in:
+/home/massysett/matchers/sunlight-22150/prefix/share/doc/x86_64-linux-ghc-7.4.1/matchers-0.20.0.0
+Configuration files installed in:
+/home/massysett/matchers/sunlight-22150/prefix/etc
+Using alex version 3.0.5 found on system at: /home/massysett/.cabal/bin/alex
+Using ar found on system at: /usr/bin/ar
+Using c2hs version 0.16.5 found on system at: /home/massysett/.cabal/bin/c2hs
+Using cpphs version 1.16 found on system at: /home/massysett/.cabal/bin/cpphs
+No ffihugs found
+Using gcc version 4.7 found on system at: /usr/bin/gcc
+Using ghc version 7.4.1 given by user at: /home/massysett/bin/ghc-7.4.1
+Using ghc-pkg version 7.4.1 given by user at:
+/home/massysett/bin/ghc-pkg-7.4.1
+No greencard found
+Using haddock version 2.14.3 found on system at: /opt/ghc/current/bin/haddock
+Using happy version 1.19.3 found on system at:
+/home/massysett/.cabal/bin/happy
+No hmake found
+Using hpc version 0.67 found on system at: /opt/ghc/current/bin/hpc
+Using hsc2hs version 0.67 found on system at: /home/massysett/bin/hsc2hs
+Using hscolour version 1.20 found on system at:
+/home/massysett/.cabal/bin/HsColour
+No hugs found
+No jhc found
+Using ld found on system at: /usr/bin/ld
+No lhc found
+No lhc-pkg found
+No nhc98 found
+Using pkg-config version 0.26 found on system at: /usr/bin/pkg-config
+Using ranlib found on system at: /usr/bin/ranlib
+Using strip found on system at: /usr/bin/strip
+Using tar found on system at: /bin/tar
+No uhc found
+
+Standard error:
+<empty>
+
+./Setup ["build","--verbose=2"] FAILED with exit code 1
+Standard output:
+Component build order: library
+creating dist/build
+creating dist/build/autogen
+Building matchers-0.20.0.0...
+Preprocessing library matchers-0.20.0.0...
+creating dist/build/Matchers/Pcre
+creating dist/build/Matchers
+creating dist/build/Matchers/Pcre
+/home/massysett/bin/hsc2hs --cc=/usr/bin/gcc --ld=/usr/bin/gcc --cflag=-Wl,--hash-size=31 --cflag=-Wl,--reduce-memory-overheads --lflag=-Wl,--hash-size=31 --lflag=-Wl,--reduce-memory-overheads --cflag=-D__GLASGOW_HASKELL__=704 --cflag=-Dlinux_BUILD_OS=1 --cflag=-Dx86_64_BUILD_ARCH=1 --cflag=-Dlinux_HOST_OS=1 --cflag=-Dx86_64_HOST_ARCH=1 --lflag=-lpcre --cflag=-I/opt/ghc/7.4.1/lib/ghc-7.4.1/time-1.4/include --cflag=-Idist/build/autogen --cflag=-include --cflag=dist/build/autogen/cabal_macros.h --cflag=-Idist/build/autogen --cflag=-include --cflag=dist/build/autogen/cabal_macros.h --cflag=-Idist/build/autogen --cflag=-include --cflag=dist/build/autogen/cabal_macros.h --cflag=-Idist/build/autogen --cflag=-include --cflag=dist/build/autogen/cabal_macros.h --cflag=-Idist/build/autogen --cflag=-include --cflag=dist/build/autogen/cabal_macros.h --cflag=-Idist/build/autogen --cflag=-include --cflag=dist/build/autogen/cabal_macros.h --cflag=-Idist/build/autogen --cflag=-include --cflag=dist/build/autogen/cabal_macros.h --cflag=-Idist/build/autogen --cflag=-include --cflag=dist/build/autogen/cabal_macros.h --cflag=-Idist/build/autogen --cflag=-include --cflag=dist/build/autogen/cabal_macros.h --cflag=-Idist/build/autogen --cflag=-include --cflag=dist/build/autogen/cabal_macros.h --cflag=-Idist/build/autogen --cflag=-include --cflag=dist/build/autogen/cabal_macros.h --cflag=-Idist/build/autogen --cflag=-include --cflag=dist/build/autogen/cabal_macros.h --cflag=-Idist/build/autogen --cflag=-include --cflag=dist/build/autogen/cabal_macros.h --cflag=-Idist/build/autogen --cflag=-include --cflag=dist/build/autogen/cabal_macros.h --cflag=-Idist/build/autogen --cflag=-include --cflag=dist/build/autogen/cabal_macros.h --cflag=-I/opt/ghc/7.4.1/lib/ghc-7.4.1/bytestring-0.9.2.1/include --cflag=-Idist/build/autogen --cflag=-include --cflag=dist/build/autogen/cabal_macros.h --cflag=-Idist/build/autogen --cflag=-include --cflag=dist/build/autogen/cabal_macros.h --cflag=-I/opt/ghc/7.4.1/lib/ghc-7.4.1/base-4.5.0.0/include --cflag=-Idist/build/autogen --cflag=-include --cflag=dist/build/autogen/cabal_macros.h --cflag=-Idist/build/autogen --cflag=-include --cflag=dist/build/autogen/cabal_macros.h --cflag=-Idist/build/autogen --cflag=-include --cflag=dist/build/autogen/cabal_macros.h --cflag=-I/opt/ghc/7.4.1/lib/ghc-7.4.1/include --cflag=-Idist/build/autogen --cflag=-include --cflag=dist/build/autogen/cabal_macros.h --lflag=-L/opt/ghc/7.4.1/lib/ghc-7.4.1/time-1.4 --lflag=-Wl,-R,/opt/ghc/7.4.1/lib/ghc-7.4.1/time-1.4 --lflag=-L/home/massysett/matchers/sunlight-22150/prefix/lib/x86_64-linux-ghc-7.4.1/prednote-0.24.0.0 --lflag=-Wl,-R,/home/massysett/matchers/sunlight-22150/prefix/lib/x86_64-linux-ghc-7.4.1/prednote-0.24.0.0 --lflag=-L/home/massysett/matchers/sunlight-22150/prefix/lib/x86_64-linux-ghc-7.4.1/split-0.2.2 --lflag=-Wl,-R,/home/massysett/matchers/sunlight-22150/prefix/lib/x86_64-linux-ghc-7.4.1/split-0.2.2 --lflag=-L/home/massysett/matchers/sunlight-22150/prefix/lib/x86_64-linux-ghc-7.4.1/rainbow-0.14.0.2 --lflag=-Wl,-R,/home/massysett/matchers/sunlight-22150/prefix/lib/x86_64-linux-ghc-7.4.1/rainbow-0.14.0.2 --lflag=-L/home/massysett/matchers/sunlight-22150/prefix/lib/x86_64-linux-ghc-7.4.1/terminfo-0.4.0.0 --lflag=-Wl,-R,/home/massysett/matchers/sunlight-22150/prefix/lib/x86_64-linux-ghc-7.4.1/terminfo-0.4.0.0 --lflag=-ltinfo --lflag=-L/home/massysett/matchers/sunlight-22150/prefix/lib/x86_64-linux-ghc-7.4.1/parsec-3.1.5 --lflag=-Wl,-R,/home/massysett/matchers/sunlight-22150/prefix/lib/x86_64-linux-ghc-7.4.1/parsec-3.1.5 --lflag=-L/home/massysett/matchers/sunlight-22150/prefix/lib/x86_64-linux-ghc-7.4.1/text-1.1.1.3 --lflag=-Wl,-R,/home/massysett/matchers/sunlight-22150/prefix/lib/x86_64-linux-ghc-7.4.1/text-1.1.1.3 --lflag=-L/opt/ghc/7.4.1/lib/ghc-7.4.1/old-locale-1.0.0.4 --lflag=-Wl,-R,/opt/ghc/7.4.1/lib/ghc-7.4.1/old-locale-1.0.0.4 --lflag=-L/home/massysett/matchers/sunlight-22150/prefix/lib/x86_64-linux-ghc-7.4.1/mtl-2.2.1 --lflag=-Wl,-R,/home/massysett/matchers/sunlight-22150/prefix/lib/x86_64-linux-ghc-7.4.1/mtl-2.2.1 --lflag=-L/home/massysett/matchers/sunlight-22150/prefix/lib/x86_64-linux-ghc-7.4.1/contravariant-0.6 --lflag=-Wl,-R,/home/massysett/matchers/sunlight-22150/prefix/lib/x86_64-linux-ghc-7.4.1/contravariant-0.6 --lflag=-L/home/massysett/matchers/sunlight-22150/prefix/lib/x86_64-linux-ghc-7.4.1/transformers-compat-0.3.3.4 --lflag=-Wl,-R,/home/massysett/matchers/sunlight-22150/prefix/lib/x86_64-linux-ghc-7.4.1/transformers-compat-0.3.3.4 --lflag=-L/home/massysett/matchers/sunlight-22150/prefix/lib/x86_64-linux-ghc-7.4.1/transformers-0.4.1.0 --lflag=-Wl,-R,/home/massysett/matchers/sunlight-22150/prefix/lib/x86_64-linux-ghc-7.4.1/transformers-0.4.1.0 --lflag=-L/home/massysett/matchers/sunlight-22150/prefix/lib/x86_64-linux-ghc-7.4.1/tagged-0.7.2 --lflag=-Wl,-R,/home/massysett/matchers/sunlight-22150/prefix/lib/x86_64-linux-ghc-7.4.1/tagged-0.7.2 --lflag=-L/opt/ghc/7.4.1/lib/ghc-7.4.1/containers-0.4.2.1 --lflag=-Wl,-R,/opt/ghc/7.4.1/lib/ghc-7.4.1/containers-0.4.2.1 --lflag=-L/opt/ghc/7.4.1/lib/ghc-7.4.1/deepseq-1.3.0.0 --lflag=-Wl,-R,/opt/ghc/7.4.1/lib/ghc-7.4.1/deepseq-1.3.0.0 --lflag=-L/opt/ghc/7.4.1/lib/ghc-7.4.1/bytestring-0.9.2.1 --lflag=-Wl,-R,/opt/ghc/7.4.1/lib/ghc-7.4.1/bytestring-0.9.2.1 --lflag=-L/opt/ghc/7.4.1/lib/ghc-7.4.1/array-0.4.0.0 --lflag=-Wl,-R,/opt/ghc/7.4.1/lib/ghc-7.4.1/array-0.4.0.0 --lflag=-L/opt/ghc/7.4.1/lib/ghc-7.4.1/base-4.5.0.0 --lflag=-Wl,-R,/opt/ghc/7.4.1/lib/ghc-7.4.1/base-4.5.0.0 --lflag=-L/opt/ghc/7.4.1/lib/ghc-7.4.1/integer-gmp-0.4.0.0 --lflag=-Wl,-R,/opt/ghc/7.4.1/lib/ghc-7.4.1/integer-gmp-0.4.0.0 --lflag=-lgmp --lflag=-L/opt/ghc/7.4.1/lib/ghc-7.4.1/ghc-prim-0.2.0.0 --lflag=-Wl,-R,/opt/ghc/7.4.1/lib/ghc-7.4.1/ghc-prim-0.2.0.0 --lflag=-L/opt/ghc/7.4.1/lib/ghc-7.4.1 --lflag=-Wl,-R,/opt/ghc/7.4.1/lib/ghc-7.4.1 --lflag=-lm --lflag=-lrt --lflag=-ldl -o dist/build/Matchers/Pcre/Base.hs lib/Matchers/Pcre/Base.hsc
+Building library...
+/home/massysett/bin/ghc-7.4.1 --info
+/home/massysett/bin/ghc-7.4.1 --info
+creating dist/build
+/home/massysett/bin/ghc-7.4.1 --make -fbuilding-cabal-package -O -outputdir dist/build -odir dist/build -hidir dist/build -stubdir dist/build -i -idist/build -ilib -idist/build/autogen -Idist/build/autogen -Idist/build -optP-include -optPdist/build/autogen/cabal_macros.h -package-name matchers-0.20.0.0 -hide-all-packages -no-user-package-conf -package-conf /home/massysett/matchers/sunlight-22150/db -package-conf dist/package.conf.inplace -package-id base-4.5.0.0-6db966b4cf8c1a91188e66d354ba065e -package-id bytestring-0.9.2.1-18f26186028d7c0e92e78edc9071d376 -package-id parsec-3.1.5-4454f7d172770f8bf268102b9d442ad4 -package-id prednote-0.24.0.0-3742afcb5197fffac2c8e7d052602c40 -package-id text-1.1.1.3-7d1ecba54f9c1f8893ac110d8cd417a1 -package-id time-1.4-96b42dcaca5cdbc30bab9dcc07384b8d -XHaskell98 Matchers Matchers.Pcre Matchers.Pcre.Base Matchers.Times -Wall
+
+Standard error:
+
+lib/Matchers.hs:18:8:
+    Could not find module `Matchers.Types'
+    Use -v to see a list of the files searched for.
+
+./Setup ["install","--verbose=2"] FAILED with exit code 1
+Standard output:
+directory dist/doc/html/matchers does exist: False
+creating
+/home/massysett/matchers/sunlight-22150/prefix/share/doc/x86_64-linux-ghc-7.4.1/matchers-0.20.0.0
+Installing LICENSE to
+/home/massysett/matchers/sunlight-22150/prefix/share/doc/x86_64-linux-ghc-7.4.1/matchers-0.20.0.0/LICENSE
+Installing library in
+/home/massysett/matchers/sunlight-22150/prefix/lib/x86_64-linux-ghc-7.4.1/matchers-0.20.0.0
+
+Standard error:
+Setup: Error: Could not find module: Matchers with any suffix: ["hi"] in the
+search path: ["dist/build"]
+
+ghc-pkg-7.4.1 ["list","--global","--package-conf=/home/massysett/matchers/sunlight-22150/db"] succeeded with exit code 0
+Standard output:
+/opt/ghc/7.4.1/lib/ghc-7.4.1/package.conf.d:
+    Cabal-1.14.0
+    array-0.4.0.0
+    base-4.5.0.0
+    bin-package-db-0.0.0.0
+    binary-0.5.1.0
+    bytestring-0.9.2.1
+    containers-0.4.2.1
+    deepseq-1.3.0.0
+    directory-1.1.0.2
+    extensible-exceptions-0.1.1.4
+    filepath-1.3.0.0
+    (ghc-7.4.1)
+    ghc-prim-0.2.0.0
+    (haskell2010-1.1.0.1)
+    (haskell98-2.0.0.1)
+    hoopl-3.8.7.3
+    hpc-0.5.1.1
+    integer-gmp-0.4.0.0
+    old-locale-1.0.0.4
+    old-time-1.1.0.0
+    pretty-1.1.1.0
+    process-1.1.0.1
+    rts-1.0
+    template-haskell-2.7.0.0
+    time-1.4
+    unix-2.5.1.0
+
+/home/massysett/matchers/sunlight-22150/db:
+    contravariant-0.6
+    mtl-2.2.1
+    parsec-3.1.5
+    prednote-0.24.0.0
+    rainbow-0.14.0.2
+    split-0.2.2
+    tagged-0.7.2
+    terminfo-0.4.0.0
+    text-1.1.1.3
+    transformers-0.4.1.0
+    transformers-compat-0.3.3.4
+
+
+Standard error:
+<empty>
+
