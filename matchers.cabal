@@ -38,6 +38,7 @@ Library
       , Matchers.Pcre
       , Matchers.Pcre.Base
       , Matchers.Times
+      , Matchers.Types
 
    extra-libraries: pcre
 

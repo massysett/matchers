@@ -1,4 +1,4 @@
-{-# LANGUAGE ForeignFunctionInterface, Safe, EmptyDataDecls #-}
+{-# LANGUAGE ForeignFunctionInterface, EmptyDataDecls #-}
 
 module Matchers.Pcre.Base
   ( PCRE
