@@ -1,3 +1,0 @@
-This package contains helpers for performing text matches using
-regular expressions as well as simpler matching that sees if a
-particular substring exists within a larger string.

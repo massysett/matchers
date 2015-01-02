@@ -4,17 +4,11 @@ module Matchers
   , pcre
   , within
   , exact
-  , anyTime
-  , time
   ) where
 
 import Data.Text (Text, pack, toCaseFold, isInfixOf)
-import qualified Text.Parsec as P
-import qualified Data.Time as Time
-import Matchers.Times (dateTime)
 import Matchers.Pcre as PCRE
 import qualified Prednote as R
-import qualified Prednote.Comparisons as R
 import Matchers.Types
 import Data.Monoid
 
@@ -73,32 +67,3 @@ txtMatch f lbl c p = R.predicate st dyn pd
       where
         txt = flipCase t
         pat = flipCase p
-
-
--- | Matches any valid time.
-anyTime :: R.Pred Text
-anyTime = R.predicate st dyn pd
-  where
-    st = "is any valid date or time"
-    dyn x = "text " <> pack (show x) <> " - " <> st
-    pd x = case P.parse dateTime "" x of
-      Left _ -> False
-      Right _ -> True
-
--- | If the given ordering is @r@, the given time is @t@, and the
--- time of the subject is @s@, the Predbox returns @compare s t == r@.
--- Always returns False if the subject is not a valid time.
-time
-  :: Time.UTCTime
-  -- ^ @t@
-  -> Ordering
-  -- ^ @r@
-  -> R.Pred Text
-time ti ord = R.compareByMaybe "time" descRhs descLhs cmp ord
-  where
-    descRhs = pack . show $ ti
-    descLhs = pack . show
-    cmp x = case P.parse dateTime "" x of
-      Left _ -> Nothing
-      Right g -> Just $ (g `compare` ti)
-
