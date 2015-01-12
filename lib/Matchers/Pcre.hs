@@ -1,6 +1,7 @@
 {-# LANGUAGE Trustworthy #-}
 module Matchers.Pcre
-  ( B.PCRE
+  ( B.CaseSensitive(..)
+  , B.PCRE
   , compile
   , exec
   ) where
@@ -8,10 +9,9 @@ module Matchers.Pcre
 import qualified Matchers.Pcre.Base as B
 import qualified Data.Text as X
 import System.IO.Unsafe (unsafePerformIO)
-import Matchers.Types
 
 compile
-  :: CaseSensitive
+  :: B.CaseSensitive
   -> X.Text
   -> Either String B.PCRE
 compile cl x = unsafePerformIO $ B.compile cl x

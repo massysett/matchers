@@ -1,7 +1,8 @@
 {-# LANGUAGE ForeignFunctionInterface, EmptyDataDecls #-}
 
 module Matchers.Pcre.Base
-  ( PCRE
+  ( CaseSensitive(..)
+  , PCRE
   , compile
   , exec
   ) where
@@ -15,10 +16,13 @@ import Foreign.Ptr
 import Data.ByteString
 import Data.Text
 import Data.Text.Encoding
-import Matchers.Types
+
 
 #include <pcre.h>
 #include <stdlib.h>
+
+data CaseSensitive = Sensitive | Insensitive
+  deriving (Eq, Ord, Show)
 
 caseless :: CInt
 caseless = #const PCRE_CASELESS

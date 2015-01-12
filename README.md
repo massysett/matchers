@@ -8,6 +8,8 @@ It was written mostly for use with
 [Penny](http://www.github.com/massysett/penny) so it doesn't have much
 of a stable API.
 
+It uses the pcre C library, so make sure you have that installed.
+
 ## Test results
 
 [![Build Status](https://travis-ci.org/massysett/matchers.svg?branch=master)](https://travis-ci.org/massysett/matchers)

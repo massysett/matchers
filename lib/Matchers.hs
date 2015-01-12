@@ -9,7 +9,6 @@ module Matchers
 import Data.Text (Text, pack, toCaseFold, isInfixOf)
 import Matchers.Pcre as PCRE
 import qualified Prednote as R
-import Matchers.Types
 import Data.Monoid
 
 pcre
@@ -19,14 +18,13 @@ pcre
   -> Either String (R.Pred Text)
 pcre cs txt = fmap f $ compile cs txt
   where
-    f pc = R.predicate st dyn pd
+    f pc = R.predicate cond pd
       where
-        st = "matches the PCRE regular expression "
-          <> txt <> " - " <> s
+        cond = "matches the PCRE regular expression "
+          <> (pack . show $ txt) <> ", " <> s
         s = case cs of
           Sensitive -> "case sensitive"
           Insensitive -> "case insensitive"
-        dyn x = "text " <> pack (show x) <> " - " <> st
         pd x = case exec pc x of
           Nothing -> False
           Just b -> b
@@ -51,18 +49,17 @@ exact cs txt = txtMatch (==) st cs txt
 txtMatch
   :: (Text -> Text -> Bool)
   -> Text
-  -- ^ Static label
+  -- ^ Condition description
   -> CaseSensitive
   -> Text
   -- ^ Pattern
   -> R.Pred Text
-txtMatch f lbl c p = R.predicate st dyn pd
+txtMatch f lbl c p = R.predicate cond pd
   where
-    st = lbl <> " - " <> cs
+    cond = lbl <> ", " <> cs
     (cs, flipCase) = case c of
       Sensitive -> ("case sensitive", id)
       Insensitive -> ("case insensitive", toCaseFold)
-    dyn txt = "text " <> pack (show txt) <> " - " <> st
     pd t = f pat txt
       where
         txt = flipCase t
